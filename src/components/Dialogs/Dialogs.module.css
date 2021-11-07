@@ -1,0 +1,62 @@
+
+
+.Dialogs {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.DialogList {
+    /* padding: 10px; */
+    width: 200px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 5px 0px 0px 5px;
+}
+
+.ActiveDialog {
+    
+    width: 742px;
+}
+
+
+
+.dialog {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(236, 236, 236);
+    border-bottom: 1px solid rgb(194, 194, 194);
+    position: relative;
+    cursor: pointer;
+}
+
+.dialog:hover {
+
+    background-color: rgb(185, 185, 185);
+
+}
+.dialog:nth-child(1){
+    border-radius:5px 0px 0px 0px;
+}
+
+.dialog:nth-last-child(1) {
+    border-radius:0px 0px 5px 5px;
+    border:none;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(86, 146, 202);
+    border-radius: 50%;
+    position: absolute;
+    top:15px;
+    left: 15px;
+}
+
+.person {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-weight: 500;
+}

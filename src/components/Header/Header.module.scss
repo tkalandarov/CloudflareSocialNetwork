@@ -1,0 +1,18 @@
+@mixin block {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+}
+
+.header {
+  grid-area: header;
+
+  @include block();
+  display: grid;
+  align-items: center;
+  img {
+    margin-left: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+}

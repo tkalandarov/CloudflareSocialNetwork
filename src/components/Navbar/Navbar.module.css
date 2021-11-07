@@ -1,0 +1,37 @@
+.nav {
+  grid-area: nav;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+          box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+  padding: 20px 10px;
+}
+
+.nav .active_link {
+  -webkit-box-shadow: 0px 0px 38px 0px rgba(34, 60, 80, 0.15) inset;
+          box-shadow: 0px 0px 38px 0px rgba(34, 60, 80, 0.15) inset;
+}
+
+.nav a {
+  display: block;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #1d1b0f;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav a:hover {
+  background-color: lightgray;
+}
+
+.nav a:visited {
+  color: #1d1b0f;
+}
+
+.nav a:link {
+  text-decoration: none;
+}
+/*# sourceMappingURL=Navbar.module.css.map */

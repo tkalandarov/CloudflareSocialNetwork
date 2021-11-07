@@ -1,0 +1,42 @@
+$border: 1px solid red;
+
+.App {
+  display: grid;
+  justify-content: center;
+  padding: 10px;
+  background-color: #edeef0;
+
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 1140px;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 70px 600px;
+  grid-gap: 10px;
+  justify-content: center;
+
+  grid-template-areas:
+    'header header'
+    'nav content';
+
+  @mixin block {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+  }
+}
+
+
+.content {
+  grid-area: content;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+}
+
