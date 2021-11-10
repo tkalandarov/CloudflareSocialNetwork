@@ -1,0 +1,57 @@
+.composeWrapper {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 10px;
+    height: 40px;
+    background-color: #ECEDEF;
+    border-radius: 8px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.composeWrapper > svg {
+    color: #989DA7;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.composeWrapper > svg:hover {
+    transform: scale(1.2);
+    color: #828A99;
+}
+
+.composeWrapper input {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.composeWrapper input:focus{
+    outline: none;
+    border: none;
+}
+
+.sendBtn {
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.sendBtn:hover {
+    transform: scale(1.05);
+}
+
+.sendBtn svg {
+    color: #6690C1;
+    font-size: 20px;
+}

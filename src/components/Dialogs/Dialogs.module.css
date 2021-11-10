@@ -1,62 +1,54 @@
-
-
 .Dialogs {
     display: flex;
     height: 100%;
     width: 100%;
-    
 }
 
 .DialogList {
-    /* padding: 10px; */
     width: 200px;
-    background-color: rgb(216, 216, 216);
-    border-radius: 5px 0px 0px 5px;
+    background-color: #FAFBFC;
 }
 
 .ActiveDialog {
-    
     width: 742px;
+    position: relative;
 }
-
 
 
 .dialog {
     height: 60px;
     width: 100%;
-    background-color: rgb(236, 236, 236);
-    border-bottom: 1px solid rgb(194, 194, 194);
-    position: relative;
+    padding: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    background: #ECEDEF;
 }
 
 .dialog:hover {
-
     background-color: rgb(185, 185, 185);
-
-}
-.dialog:nth-child(1){
-    border-radius:5px 0px 0px 0px;
 }
 
-.dialog:nth-last-child(1) {
-    border-radius:0px 0px 5px 5px;
-    border:none;
+.link {
+    text-decoration: none;
+    color: initial;
 }
 
-.circle {
-    height: 30px;
-    width: 30px;
-    background-color: rgb(86, 146, 202);
+.link:hover {
+    background-color: lightgray;
+    color: initial;
+}
+
+.preview {
     border-radius: 50%;
-    position: absolute;
-    top:15px;
-    left: 15px;
+    background-color: rgb(86, 146, 202);
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-.person {
-    position: absolute;
-    top: 20px;
-    left: 50px;
+.name {
     font-weight: 500;
+    text-decoration: none !important;
 }

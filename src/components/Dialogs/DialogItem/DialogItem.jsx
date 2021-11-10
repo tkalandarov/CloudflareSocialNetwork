@@ -1,15 +1,15 @@
 import classes from './../Dialogs.module.css';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const DialogItem = (props) => {
     return (
-      <NavLink to={'/dialogs/' + props.preview}>
-        <div className={classes.dialog}>
-          <div className={classes.circle}>{props.id}</div>
-          <div className={classes.person}>{props.preview}</div>
-        </div>
-      </NavLink>
+        <NavLink to={'/dialogs/' + props.id} className={classes.link}>
+            <div className={classes.dialog}>
+                <img className={classes.preview} src={props.preview} alt="profile_picture"/>
+                <div className={classes.name}>{props.name}</div>
+            </div>
+        </NavLink>
     );
-  };
+};
 
-  export default DialogItem;
+export default DialogItem;

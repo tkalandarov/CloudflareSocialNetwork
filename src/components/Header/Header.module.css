@@ -1,19 +1,58 @@
 .header {
-  grid-area: header;
-  background-color: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
-          box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    grid-area: header;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+    box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
 }
 
-.header img {
-  margin-left: 30px;
-  height: 30px;
-  cursor: pointer;
+.header .logo {
+    margin: 0 30px;
+    height: 30px;
+    cursor: pointer;
 }
+
+.header .search{
+    background-color: rgb(237, 238, 240);
+    border-radius: 8px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search input{
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+}
+.search input:focus{
+    outline: none;
+}
+
+.header svg{
+    color: #979FAA;
+}
+
+.header .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.header .profileSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profileSection span{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
 /*# sourceMappingURL=Header.module.css.map */

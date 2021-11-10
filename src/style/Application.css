@@ -22,7 +22,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-      grid-template-areas: 'header header' 'nav content';
+      grid-template-areas: 'header header'
+ 'nav content';
 }
 
 .content {

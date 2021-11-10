@@ -1,31 +1,18 @@
-export let addCommentAC = () => ({ type: 'ADD-COMMENT' });
-
-
-export let changeCommentAC = (msg) => ({
-  type: 'CHANGE-COMMENT-INPUT',
-  inputTxt: msg,
-});
+import {SEND_MESSAGE} from "./types";
 
 const initialState = {
-    messagesData: [
-        { id: 5, msg: "Test message" }
+    messages: [
+        { id: 0, msg: "Test message", dateSent: "11/7/2021", timeSent: "10:33" }
     ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
-
     switch (action.type){
-        case 'CHANGE-COMMENT-INPUT':
-            state.newMessageBody = action.inputTxt;
-            break;
-        case 'ADD-COMMENT':
-            let newMsg = { id: 5, msg: state.newMessageBody };
-
-            state.messagesData.push(newMsg);
-            state.newMessageBody = '';
-            break;
+        case SEND_MESSAGE:
+            // action.payload contains new post
+            action.payload.id = state.messages.at(-1).id + 1;
+            return {...state, messages: state.messages.concat([action.payload])};
     }
-
     return state;
 };
 

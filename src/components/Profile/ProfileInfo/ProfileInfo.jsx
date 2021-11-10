@@ -5,6 +5,7 @@ const ProfileInfo = () => {
     return (
         <div className={classes.content__header}>
             <img className={classes.content__avatar} src={avatar} alt="avatar"/>
+            <span className={classes.content__nickname}>@tkalandarov<br/></span>
             <span className={classes.content__author}>Timur Kalandarov</span>
         </div>
     )

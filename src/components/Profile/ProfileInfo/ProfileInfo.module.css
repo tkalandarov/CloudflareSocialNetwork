@@ -7,6 +7,15 @@
   border-radius: 50%;
 }
 
+.content__nickname{
+  color: #979FAA;
+  font-size: 14px;
+  position: absolute;
+  font-weight: 600;
+  -webkit-transform: translate(10px, 35px);
+  transform: translate(10px,35px);
+}
+
 .content__author {
   color: white;
   font-size: 28px;

@@ -1,0 +1,9 @@
+.likes{
+    display: flex;
+    align-items: center;
+}
+
+.likes svg{
+    color: #6690C1;
+    margin-left: 5px;
+}

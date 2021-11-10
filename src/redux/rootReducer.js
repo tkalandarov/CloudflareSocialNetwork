@@ -1,8 +1,7 @@
 import {combineReducers} from "redux";
-import profileReducer from "./profileReducer";
+import postsReducer from "./postsReducer";
 import dialogsReducer from "./dialogsReducer";
-import sidebarReducer from "./sidebarReducer";
 
 export const rootReducer = combineReducers({
-    profileReducer, dialogsReducer, sidebarReducer
+    postsReducer, dialogsReducer
 })
