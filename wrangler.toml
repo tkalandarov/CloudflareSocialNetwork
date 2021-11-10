@@ -1,0 +1,14 @@
+account_id = "08e9dfbf86a3d264a8b800d53d4fa71f"
+name = "cloudflare-social-network"
+type = "webpack"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./build",entry-point = "workers-site"}
+compatibility_date = "2021-11-10"
+
+kv_namespaces = [
+    { binding = "MY_KV", id = "f9fce7c81238450c9ba71e6cba9e6427" }
+]

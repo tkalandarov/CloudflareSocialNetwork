@@ -8,7 +8,6 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 
 import {Route, BrowserRouter, Redirect} from 'react-router-dom';
-
 const App = () => {
     return (
         <BrowserRouter>
