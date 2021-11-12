@@ -6,7 +6,7 @@ import Message from './Message/Message';
 import ComposeArea from "./ComposeArea";
 
 import {connect} from "react-redux";
-import {sendMessage} from "../../redux/actions";
+import {sendMessage} from "../../redux/dialogsAction";
 
 import preview1 from "../../img/st1.jpg"
 import preview2 from "../../img/st2.jpg"

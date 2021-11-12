@@ -1,17 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import Post from "../Profile/MyPosts/Post/Post";
-import {createPost, likePost} from "../../redux/actions";
+import {fetchPosts, likePost} from "../../redux/postsActions";
+import {bindActionCreators} from "redux";
 
 const Feed = (props) => {
-    let posts = props.allPosts;
+    useEffect(() => {
+        props.fetchPosts();
+    }, []);
 
     let postsView = <p style={{textAlign: "center"}}>No posts yet</p>;
-    if (posts.length) {
-        postsView = posts.map(post =>
+    if (props.posts.length) {
+        postsView = props.posts.map(post =>
             <Post msg={post.msg}
                   likes={post.likes}
-                  onLikeClicked={(id) => likePost(id)}
+                  onLikeClicked={(id) => props.likePost(id)}
                   author={post.author}
                   datePosted={post.datePosted}
                   id={post.id}
@@ -26,13 +29,16 @@ const Feed = (props) => {
     );
 }
 
-const mapDispatchToProps = {
-    likePost
-}
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchPosts, likePost
+}, dispatch);
 
 const mapStateToProps = state => {
     return {
-        allPosts: state.postsReducer.posts
+        posts: state.posts.posts,
+        loading: state.posts.isLoading,
+        error: state.posts.error
     };
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

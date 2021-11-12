@@ -10,5 +10,5 @@ site = {bucket = "./build",entry-point = "workers-site"}
 compatibility_date = "2021-11-10"
 
 kv_namespaces = [
-    { binding = "MY_KV", id = "f9fce7c81238450c9ba71e6cba9e6427" }
+   { binding = "POSTS_KV", preview_id = "266d41a6e10341d9930a7b8a82a07fdb" }
 ]

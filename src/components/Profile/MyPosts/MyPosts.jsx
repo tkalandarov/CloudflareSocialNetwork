@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 
 import Post from './Post/Post';
 
-import {createPost, likePost} from "../../../redux/actions";
+import {createPost, fetchPosts, likePost} from "../../../redux/postsActions";
 import moment from "moment";
+import {bindActionCreators} from "redux";
 
 const MyPosts = (props) => {
     const [inputText, setInputText] = useState("");
+
+    useEffect(() => {
+        props.fetchPosts();
+    }, []);
+
     let addPost = () => {
         let formattedText = inputText.trim(); // Remove whitespaces from the start and the end
         formattedText = formattedText.replace(/\s\s+/g, " "); // remove tabs, newlines, etc.
@@ -63,14 +69,14 @@ const MyPosts = (props) => {
     );
 };
 
-const mapDispatchToProps = {
-    createPost,
-    likePost
-}
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchPosts, createPost, likePost
+}, dispatch);
+
 
 const mapStateToProps = state => {
     return {
-        myPosts: state.postsReducer.posts.filter(x=>x.author==="tkalandarov")
+        myPosts: state.posts.posts.filter(x=>x.author==="tkalandarov")
     };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MyPosts);

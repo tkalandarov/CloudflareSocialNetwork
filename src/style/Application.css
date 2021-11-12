@@ -1,3 +1,7 @@
+body{
+    background: #ECEEF0;
+}
+
 .App {
   display: -ms-grid;
   display: grid;
@@ -34,5 +38,15 @@
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
           box-shadow: 0px 0px 69px -16px rgba(34, 60, 80, 0.11);
+    position: relative;
 }
-/*# sourceMappingURL=Application.css.map */
+
+.content > *{
+    border-radius: 5px;
+    background: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: fit-content;
+}

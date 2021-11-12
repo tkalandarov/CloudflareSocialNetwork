@@ -1,13 +1,6 @@
-import {getAssetFromKV, mapRequestToAsset, serveSinglePageApp} from '@cloudflare/kv-asset-handler'
+import {getAssetFromKV, serveSinglePageApp} from '@cloudflare/kv-asset-handler'
 
-/**
- * The DEBUG flag will do two things that help during development:
- * 1. we will skip caching on the edge, which makes it easier to
- *    debug.
- * 2. we will return an error message on exception in your Response rather
- *    than the default 404.html page.
- */
-const DEBUG = false
+const DEBUG = true;
 
 addEventListener('fetch', event => {
     try {
@@ -24,9 +17,55 @@ addEventListener('fetch', event => {
     }
 })
 
+const setData = (key, data) => POSTS_KV.put(key, data);
+const getData = key => POSTS_KV.get(key);
+
+async function addNewPost(request) {
+    const body = await request.text();
+    const dataKey = `posts`;
+    try {
+        JSON.parse(body);
+        await setData(dataKey, body);
+        return new Response(body, {status: 200});
+    } catch (err) {
+        return new Response(err, {status: 500});
+    }
+}
+
+const defaultData = {
+    posts: [
+        {
+            id: 0,
+            author: "tkalandarov",
+            msg: "Hey guys, I am very excited to announce that I am starting to work on the assignment by Cloudflare. Hopefully, it will help me land an internship =)",
+            likes: 55,
+            datePosted: "11/6/2021 9:42 PM"
+        }
+    ]
+}
+
+async function getPosts(request) {
+    const dataKey = `posts`;
+    let data = await getData(dataKey);
+    if (!data) {
+        await setData(dataKey, JSON.stringify(defaultData));
+        data = defaultData;
+    }
+
+    const json = JSON.stringify(data, null, 2)
+    return new Response(json, {
+        headers: {
+            "content-type": "application/json;charset=UTF-8"
+        }
+    });
+}
+
 async function handleEvent(event) {
-    const url = new URL(event.request.url)
-    let options = {}
+    const {request} = event;
+    const {url} = request;
+    let options = {
+        mapRequestToAsset: serveSinglePageApp
+    };
 
     try {
         if (DEBUG) {
@@ -35,11 +74,18 @@ async function handleEvent(event) {
                 bypassCache: true,
             };
         }
-        const page = await getAssetFromKV(event, options);
 
+        if (url.includes("/api/posts")) {
+            if (request.method === "POST") {
+                return addNewPost(request);
+            } else {
+                return getPosts(request);
+            }
+        }
+
+        const page = await getAssetFromKV(event, options);
         // allow headers to be altered
         const response = new Response(page.body, page);
-
         response.headers.set("X-XSS-Protection", "1; mode=block");
         response.headers.set("X-Content-Type-Options", "nosniff");
         response.headers.set("X-Frame-Options", "DENY");

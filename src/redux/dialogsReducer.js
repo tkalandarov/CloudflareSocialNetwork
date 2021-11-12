@@ -12,8 +12,8 @@ const dialogsReducer = (state = initialState, action) => {
             // action.payload contains new post
             action.payload.id = state.messages.at(-1).id + 1;
             return {...state, messages: state.messages.concat([action.payload])};
+        default: return state;
     }
-    return state;
 };
 
 
