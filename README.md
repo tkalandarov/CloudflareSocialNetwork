@@ -5,7 +5,7 @@ This application is the general assignment in terms of Cloudlfare's application 
 The client part is built using <b>React</b> and <b>Redux</b>, whereas the back end is based on <b>Cloudflare Workers</b> serverless framework. 
 
 You can find the <b>demo video on YouTube</b> by the following link:
-https://youtu.be/dOcHBPw6FF8
+https://youtu.be/9QwAt-Z_P2Y
 
 <hr/>
 This project was made by Timur Kalandarov:
