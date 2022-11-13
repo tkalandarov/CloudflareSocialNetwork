@@ -14,7 +14,7 @@ The client part is built using <b>React</b> and <b>Redux</b>, whereas the back e
 <b>[Live Demo](https://cloudflare-social-network.tkalandarov.workers.dev/feed)</b>
 <br/>
 <br/>
-<img src="media/screenshot" width=600/>
+<img src="media/screenshot.png" width=600/>
 
 <hr/>
 This project was made by Timur Kalandarov:
